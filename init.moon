@@ -26,7 +26,7 @@ build_handler = () ->
 
 
 command.register({
-  name: 'sbuild'
+  name: 'build'
   description: 'Build the Haskell Stack project '
   handler: build_handler
 })
@@ -56,7 +56,7 @@ exec_handler = (args) ->
 
 
 command.register({
-  name: 'sexec'
+  name: 'exec'
   description: 'Run the Haskell Stack project'
   input: howl.interact.read_text
   handler: exec_handler
@@ -64,7 +64,8 @@ command.register({
 
 
 unload = () ->
-  command.unregister 'sbuild'
+  command.unregister 'build'
+  command.unregister 'exec'
 
 -- append the HASKELL API to howl
 -- h_api = bundle_load('haskell_api')
